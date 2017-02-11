@@ -11,19 +11,28 @@
   <repo></repo>
   <issue></issue>
 
-  <js-module src="www/SpeechRecognition.js" name="SpeechRecognition">
-    <clobbers target="SpeechRecognition" />
+  <js-module src="www/SpeechRecognitionksp.js" name="SpeechRecognitionksp">
+    <clobbers target="SpeechRecognitionksp" />
   </js-module>
 
   <!-- ios -->
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
-      <feature name="SpeechRecognition">
+      <feature name="SpeechRecognitionksp">
         <param name="ios-package" value="CDVSpeechRecognition"/>
         <param name="onload" value="true" />
       </feature>
     </config-file>
     <source-file src="src/ios/CDVSpeechRecognition.swift" />
     <source-file src="src/ios/CDVSpeechRecognitionViewController.swift" />
+	<config-file target="*-Info.plist" parent="NSPhotoLibraryUsageDescription">
+		<string>Save image to photo lib</string>
+	</config-file>
+	<config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+		<string>Capture image to use for scanning QR Code and storing splashscreen</string>
+	</config-file>
+	<config-file target="*-Info.plist" parent="NSSpeechRecognitionUsageDescription">
+		<string>React with blind people</string>
+	</config-file>
   </platform>
 </plugin>
