@@ -15,4 +15,4 @@ var SpeechRecognitionksp = {
     exec(onSuccess, onFail, 'SpeechRecognitionksp', 'recordButtonTapped', [limitationSec]);
   }
 };
-module.exports = SpeechRecognition
+module.exports = SpeechRecognitionksp
